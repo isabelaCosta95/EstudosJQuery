@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Eventos</title>
+    <style>
+        #bloco {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="bloco"></div>
+
+    <label for="nome"></label>
+    <input type="text" id="nome">
+
+    <p id="texto"></p>
+    <script>
+        // Events de clique
+        $("#bloco").click(() => {
+            $("#texto").text("Clicado");
+        });
+        $("#bloco").mouseenter(() => {
+            $("#texto").text("Mouse entrou");
+        });
+        $("#bloco").mouseleave(() => {
+            $("#texto").text("Mouse saiu");
+        });
+        $("#bloco").mousemove(() => {
+            $("#texto").text("Mouse movendo");
+        });
+
+        // Evento de Teclado
+        $("#nome").keyup(() => {
+            $("#texto").text($("#nome").val());
+        });
+    </script>
+</body>
+</html>
