@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Eventos</title>
+    <style>
+        #bloco {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+
+        #bloco2 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div style="display:flex; justify-content: space-around;">
+        <div id="bloco"></div>
+        <div id="bloco2"></div>
+    </div>
+    
+    <p id="texto"></p>
+
+    <script>
+
+        $("#bloco").on({
+           click: () => $("#texto").text("Clicado"),
+           mouseenter: () => $("#texto").text("Mouse entrou"),
+           mouseleave: () => $("#texto").text("Mouse saiu"),
+           mousemove: () => $("#texto").text("Mouse movendo"),
+           dblclick: () => $("#texto").text("dupo clique")
+        });
+
+        // Dispara o Evento em outro bloco
+        $("#bloco2").click(() => {
+            $("#bloco").trigger("click");
+        });
+    </script>
+</body>
+</html>
