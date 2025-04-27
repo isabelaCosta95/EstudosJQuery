@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Eventos</title>
+    <style>
+        #bloco {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="bloco"></div>
+
+    <p id="texto"></p>
+    <script>
+
+        // On para eventos que fazem a mesma coisa e utilizam o mesmo elemento
+        $("#bloco").on("click dblcli'ck", () => {
+            $("#texto").text("Clicado");
+        });
+
+        // On para eventos que fazem coisas diferentes, mas utilizam o mesmo elemento
+
+        $("#bloco").on({
+           click: () => $("#texto").text("Clicado"),
+           mouseenter: () => $("#texto").text("Mouse entrou"),
+           mouseleave: () => $("#texto").text("Mouse saiu"),
+           mousemove: () => $("#texto").text("Mouse movendo"),
+           dblclick: () => $("#texto").text("dupo clique")
+        });
+
+    </script>
+</body>
+</html>
